@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "DockerTraining": {
+      "commandName": "Project",
+      "commandLineArgs": "-e \"test\" -s \"Server=tcp:localhost,1433;Initial Catalog=DockerTraining;Persist Security Info=False;User ID=sa;Password=Letmein1;MultipleActiveResultSets=False;Connection Timeout=30;TrustServerCertificate=True\""
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "commandLineArgs": "-e \"test\" -s \"Server=tcp:mssql;Initial Catalog=DockerTraining;Persist Security Info=False;User ID=sa;Password=Letmein1;MultipleActiveResultSets=False;Connection Timeout=30;TrustServerCertificate=True\"",
+      "DockerfileRunArguments": "--network sql_default"
+    }
+  }
+}
