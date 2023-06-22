@@ -81,8 +81,13 @@ internal class CommandService
 
     private static void ReadFromFile()
     {
-        var filepath = "/usr/DockerTraining/textfile.txt";
+        const string fileDir = "/usr/DockerTraining/";
+        const string filename = "textfile.txt";
         var fileData = "File is Empty";
+        if (!Directory.Exists(fileDir))
+            Directory.CreateDirectory(fileDir);
+
+        var filepath = Path.Combine(fileDir, filename);
         if (File.Exists(filepath))
             fileData = File.ReadAllText(filepath);
         else
